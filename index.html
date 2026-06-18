@@ -1,10 +1,10 @@
-### 💳 Flashcard 1: O atributo aria-label
+### 💳 Flashcard 1: Daltonismo e Uso das Cores
 
 <table border="0" width="100%" style="border-collapse: collapse;">
   <tr>
     <td bgcolor="#0d1117" align="center" style="padding: 20px; border-radius: 6px 6px 0 0;">
       <font color="#58a6ff"><b>FRENTE DO CARD</b></font>
-      <p><font color="#ffffff">Quando devemos utilizar o atributo <b><code>aria-label</code></b> em um elemento HTML?</font></p>
+      <p><font color="#ffffff">Por que não devemos usar <b>apenas a cor</b> para transmitir informações importantes em uma interface?</font></p>
     </td>
   </tr>
   <tr>
@@ -13,20 +13,20 @@
         <summary style="color: #58a6ff; cursor: pointer;"><b>👁️ Clique aqui para ver o Verso (Resposta)</b></summary>
         <br>
         <ul>
-          <li><font color="#c9d1d9"><b>Uso principal:</b> Quando um elemento interativo não possui texto visível na tela, mas precisa de um rótulo textual para leitores de tela.</font></li>
-          <li><font color="#c9d1d9"><b>Exemplo prático:</b> Um botão de fechar que contém apenas um ícone de "X" (<code>&lt;button aria-label="Fechar"&gt;X&lt;/button&gt;</code>).</font></li>
+          <li><font color="#c9d1d9"><b>Impacto:</b> Usuários com daltonismo (como deuteranopia ou protanopia) podem não conseguir distinguir mensagens baseadas apenas em vermelho e verde.</font></li>
+          <li><font color="#c9d1d9"><b>Solução:</b> Sempre combine a cor com ícones, textos explicativos ou texturas (ex: adicionar um ícone de alerta ⚠️ junto com a borda vermelha de erro).</font></li>
         </ul>
       </details>
     </td>
   </tr>
 </table>
-### 💳 Flashcard 2: Navegação por Teclado e tabindex
+### 💳 Flashcard 2: Baixa Visão e Zoom de Tela
 
 <table border="0" width="100%" style="border-collapse: collapse;">
   <tr>
     <td bgcolor="#0d1117" align="center" style="padding: 20px; border-radius: 6px 6px 0 0;">
       <font color="#58a6ff"><b>FRENTE DO CARD</b></font>
-      <p><font color="#ffffff">Qual é o impacto de usar <b><code>tabindex="0"</code></b> e <b><code>tabindex="-1"</code></b> na acessibilidade?</font></p>
+      <p><font color="#ffffff">O que acontece com o layout de um site quando um usuário com baixa visão aplica <b>200% de zoom</b> na tela?</font></p>
     </td>
   </tr>
   <tr>
@@ -35,8 +35,8 @@
         <summary style="color: #58a6ff; cursor: pointer;"><b>👁️ Clique aqui para ver o Verso (Resposta)</b></summary>
         <br>
         <ul>
-          <li><font color="#c9d1d9"><b>tabindex="0":</b> Inclui um elemento que naturalmente não é focável (como uma <code>&lt;div&gt;</code>) na ordem sequencial do teclado (tecla Tab).</font></li>
-          <li><font color="#c9d1d9"><b>tabindex="-1":</b> Remove o elemento da navegação por Tab, mas ainda permite que ele receba foco programaticamente via JavaScript (útil para modais e alertas).</font></li>
+          <li><font color="#c9d1d9"><b>Comportamento esperado:</b> O conteúdo deve se reorganizar de forma responsiva (reflow) sem que textos fiquem cortados, sobrepostos ou escondidos.</font></li>
+          <li><font color="#c9d1d9"><b>Boa prática:</b> Usar unidades de tamanho relativas (como <code>rem</code> e <code>em</code>) em vez de valores fixos em pixels (<code>px</code>) para fontes e espaçamentos.</font></li>
         </ul>
       </details>
     </td>
