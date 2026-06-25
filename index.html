@@ -1,44 +1,173 @@
-### 💳 Flashcard 1: Daltonismo e Uso das Cores
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flash Cards - Problemas Visuais</title>
 
-<table border="0" width="100%" style="border-collapse: collapse;">
-  <tr>
-    <td bgcolor="#0d1117" align="center" style="padding: 20px; border-radius: 6px 6px 0 0;">
-      <font color="#58a6ff"><b>FRENTE DO CARD</b></font>
-      <p><font color="#ffffff">Por que não devemos usar <b>apenas a cor</b> para transmitir informações importantes em uma interface?</font></p>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#161b22" style="padding: 15px; border-radius: 0 0 6px 6px;">
-      <details>
-        <summary style="color: #58a6ff; cursor: pointer;"><b>👁️ Clique aqui para ver o Verso (Resposta)</b></summary>
-        <br>
-        <ul>
-          <li><font color="#c9d1d9"><b>Impacto:</b> Usuários com daltonismo (como deuteranopia ou protanopia) podem não conseguir distinguir mensagens baseadas apenas em vermelho e verde.</font></li>
-          <li><font color="#c9d1d9"><b>Solução:</b> Sempre combine a cor com ícones, textos explicativos ou texturas (ex: adicionar um ícone de alerta ⚠️ junto com a borda vermelha de erro).</font></li>
-        </ul>
-      </details>
-    </td>
-  </tr>
-</table>
-### 💳 Flashcard 2: Baixa Visão e Zoom de Tela
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4A90E2, #50C9C3);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
 
-<table border="0" width="100%" style="border-collapse: collapse;">
-  <tr>
-    <td bgcolor="#0d1117" align="center" style="padding: 20px; border-radius: 6px 6px 0 0;">
-      <font color="#58a6ff"><b>FRENTE DO CARD</b></font>
-      <p><font color="#ffffff">O que acontece com o layout de um site quando um usuário com baixa visão aplica <b>200% de zoom</b> na tela?</font></p>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#161b22" style="padding: 15px; border-radius: 0 0 6px 6px;">
-      <details>
-        <summary style="color: #58a6ff; cursor: pointer;"><b>👁️ Clique aqui para ver o Verso (Resposta)</b></summary>
-        <br>
-        <ul>
-          <li><font color="#c9d1d9"><b>Comportamento esperado:</b> O conteúdo deve se reorganizar de forma responsiva (reflow) sem que textos fiquem cortados, sobrepostos ou escondidos.</font></li>
-          <li><font color="#c9d1d9"><b>Boa prática:</b> Usar unidades de tamanho relativas (como <code>rem</code> e <code>em</code>) em vez de valores fixos em pixels (<code>px</code>) para fontes e espaçamentos.</font></li>
-        </ul>
-      </details>
-    </td>
-  </tr>
-</table>
+h1{
+    color:white;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.flashcard-container{
+    perspective:1000px;
+}
+
+.flashcard{
+    width:400px;
+    height:250px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 0.8s;
+    cursor:pointer;
+}
+
+.flashcard.flip{
+    transform:rotateY(180deg);
+}
+
+.face{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    backface-visibility:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.front{
+    background:white;
+    color:#333;
+}
+
+.back{
+    background:#2C3E50;
+    color:white;
+    transform:rotateY(180deg);
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    background:white;
+    color:#333;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#f0f0f0;
+}
+</style>
+</head>
+<body>
+
+<h1>Flash Cards - Problemas Visuais</h1>
+
+<div class="flashcard-container">
+    <div class="flashcard" id="card">
+
+        <div class="face front" id="front">
+            O que e Miopia?
+        </div>
+
+        <div class="face back" id="back">
+            Dificuldade para enxergar objetos distantes. A imagem e formada antes da retina.
+        </div>
+
+    </div>
+</div>
+
+<div class="buttons">
+    <button onclick="anterior()">Anterior</button>
+    <button onclick="proximo()">Proximo</button>
+</div>
+
+<script>
+
+const cards = [
+{
+titulo:"O que e Miopia?",
+info:"Dificuldade para enxergar objetos distantes. A imagem e formada antes da retina."
+},
+{
+titulo:"O que e Hipermetropia?",
+info:"Dificuldade para enxergar objetos proximos. A imagem e formada atras da retina."
+},
+{
+titulo:"O que e Astigmatismo?",
+info:"Visao borrada em diferentes distancias devido a curvatura irregular da cornea."
+},
+{
+titulo:"O que e Daltonismo?",
+info:"Alteracao na percepcao das cores, geralmente hereditaria."
+},
+{
+titulo:"O que e Catarata?",
+info:"Opacificacao do cristalino, causando visao embaracada e perda gradual da visao."
+},
+{
+titulo:"O que e Glaucoma?",
+info:"Doenca que pode danificar o nervo optico devido ao aumento da pressao ocular."
+}
+];
+
+let atual = 0;
+
+const card = document.getElementById("card");
+const front = document.getElementById("front");
+const back = document.getElementById("back");
+
+function carregarCard(){
+    front.textContent = cards[atual].titulo;
+    back.textContent = cards[atual].info;
+    card.classList.remove("flip");
+}
+
+card.addEventListener("click",()=>{
+    card.classList.toggle("flip");
+});
+
+function proximo(){
+    atual = (atual + 1) % cards.length;
+    carregarCard();
+}
+
+function anterior(){
+    atual = (atual - 1 + cards.length) % cards.length;
+    carregarCard();
+}
+
+carregarCard();
+
+</script>
+
+</body>
+</html>
